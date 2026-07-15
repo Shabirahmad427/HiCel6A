@@ -63,11 +63,6 @@ inputs/HiCel6A/01_Holo/rep2/07_PCA/00_FEL/cpptraj_fel.in
 inputs/HiCel6A/01_Holo/rep2/08_pcasuite/00_pcasuite/cpptraj_pcasuite.in
 inputs/HiCel6A/01_Holo/rep2/08_pcasuite/00_pcasuite/pcasuite.sh
 inputs/HiCel6A/01_Holo/rep2/08_pcasuite/00_pcasuite/protein.avg.pdb
-inputs/HiCel6A/01_Holo/rep2/09_MMGBSA/00_0_0.2us/mmpbsa.in
-inputs/HiCel6A/01_Holo/rep2/09_MMGBSA/01_0.2_0.4us/mmpbsa.in
-inputs/HiCel6A/01_Holo/rep2/09_MMGBSA/02_0.4_0.6us/mmpbsa.in
-inputs/HiCel6A/01_Holo/rep2/09_MMGBSA/03_0.6_0.8us/mmpbsa.in
-inputs/HiCel6A/01_Holo/rep2/09_MMGBSA/04_0.8_1us/mmpbsa.in
 inputs/HiCel6A/01_Holo/rep2/09_MMGBSA/05_1-1.2us/mmpbsa.in
 inputs/HiCel6A/01_Holo/rep2/09_MMGBSA/06_1.2-1.4us/mmpbsa.in
 inputs/HiCel6A/01_Holo/rep2/09_MMGBSA/07_1.4-1.6us/mmpbsa.in
@@ -75,8 +70,6 @@ inputs/HiCel6A/01_Holo/rep2/09_MMGBSA/08_1.6-1.8us/mmpbsa.in
 inputs/HiCel6A/01_Holo/rep2/09_MMGBSA/09_1.8-2us/mmpbsa.in
 inputs/HiCel6A/01_Holo/rep2/10_extra/mddf/cm_water.jl
 inputs/HiCel6A/01_Holo/rep2/10_extra/mddf/results-water.json
-inputs/HiCel6A/01_Holo/rep2/10_extra/mddf_last1us/cm_water.jl
-inputs/HiCel6A/01_Holo/rep2/10_extra/mddf_last1us/results-water.json
 inputs/HiCel6A/01_Holo/rep3/00_preparation/README
 inputs/HiCel6A/01_Holo/rep3/00_preparation/step3_input.parm7
 inputs/HiCel6A/01_Holo/rep3/00_preparation/step3_input.pdb
