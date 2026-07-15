@@ -1,0 +1,26 @@
+parm ../../04_traj/complex.parm7
+trajin ../../04_traj/2us_nowat.nc 50001 100000 5
+rms first :1-360&@CA,C,O,N
+
+# 2D RMSD — protein backbone (PDB 87–450, residues 1–360)
+rms2d 2drms_protein :1-360&@CA,C,O,N mass qrmsd out 2DRMSD_protein_rep3_1us.dat.gz
+
+# 2D RMSD — complex protein+ligand (residues 1–361)
+rms2d 2drms_complex :1-361 mass qrmsd out 2DRMSD_complex_rep3_1us.dat.gz
+
+# 2D RMSD — ligand only (residue 361)
+rms2d 2drms_ligand :361 mass qrmsd out 2DRMSD_ligand_rep3_1us.dat.gz
+
+# 2D RMSD — Loop1 PDB 174–191 (residues 84–101)
+rms2d 2drms_loop1 :84-101&@CA,C,O,N mass qrmsd out 2DRMSD_Loop1_174-191_rep3_1us.dat.gz
+
+# 2D RMSD — Loop2 PDB 307–330 (residues 217–240)
+rms2d 2drms_loop2 :217-240&@CA,C,O,N mass qrmsd out 2DRMSD_Loop2_307-330_rep3_1us.dat.gz
+
+# 2D RMSD — Loop3 PDB 355–391 (residues 265–301)
+rms2d 2drms_loop3 :265-301&@CA,C,O,N mass qrmsd out 2DRMSD_Loop3_355-391_rep3_1us.dat.gz
+
+# 2D RMSD — Loop4 PDB 397–435 (residues 307–345)
+rms2d 2drms_loop4 :307-345&@CA,C,O,N mass qrmsd out 2DRMSD_Loop4_397-435_rep3_1us.dat.gz
+
+run

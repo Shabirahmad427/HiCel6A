@@ -1,0 +1,37 @@
+parm ../complex.parm7
+trajin ../2us_nowat.nc
+
+rms first !(!:1-361@CA)
+average crdset 1ocb-average
+createcrd 1ocb-trajectories
+run
+
+crdaction 1ocb-trajectories rms ref 1ocb-average !(!:1-361@CA)
+crdaction 1ocb-trajectories matrix covar name 1ocb-covar !(!:1-361@CA)
+runanalysis diagmatrix 1ocb-covar out 1ocb-evecs.dat vecs 3 name myEvecs nmwiz nmwizvecs 3 nmwizfile dna.nmd nmwizmask !(!:1-361@CA)
+crdaction 1ocb-trajectories projection PC modes myEvecs beg 1 end 3 !(!:1-361@CA)
+projection modes 1ocb-evecs.dat out 1ocb-ca.dat beg 1 end 3 !(!:1-361@CA)
+run
+
+runanalysis modes eigenval name myEvecs out evalfrac.dat
+runanalysis modes fluct out rmsfluct1-10.dat name myEvecs beg 1 end 10
+runanalysis modes fluct out rmsfluct1-1.dat name myEvecs beg 1 end 1
+runanalysis modes fluct out rmsfluct2-2.dat name myEvecs beg 2 end 2
+runanalysis modes fluct out rmsfluct1-2.dat name myEvecs beg 1 end 2
+runanalysis modes fluct out rmsfluct-mode1.dat name myEvecs beg 1
+runanalysis modes fluct out rmsfluct-mode2.dat name myEvecs beg 2
+crdaction 1ocb-trajectories projection p1 modes myEvecs beg 1 end 10 :1-361@CA out pca.dat
+crdaction 1ocb-trajectories projection p2 modes myEvecs beg 1 end 2 :1-361@CA out pca12.dat
+
+run
+hist PC:1 bins 40 out 1ocb-hist.agr norm name PC-1
+hist PC:2 bins 40 out 1ocb-hist.agr norm name PC-2
+hist PC:2 bins 40 out 1ocb-hist.agr norm name PC-3
+run
+runanalysis hist PC:1 PC:2 free 298 bins 40 out pc1xpc2.dat
+runanalysis hist PC:1 PC:2 free 298 bins 40 out pc1xpc2.gnu usemap
+runanalysis hist PC:1 PC:3 free 298 bins 40 out pc1xpc3.dat
+runanalysis hist PC:1 PC:3 free 298 bins 40 out pc1xpc3.gnu usemap
+runanalysis hist PC:2 PC:3 free 298 bins 40 out pc2xpc3.dat
+runanalysis hist PC:2 PC:3 free 298 bins 40 out pc2xpc3.gnu usemap
+run

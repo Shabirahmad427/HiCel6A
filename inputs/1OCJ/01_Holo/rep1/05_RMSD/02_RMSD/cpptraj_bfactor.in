@@ -1,0 +1,11 @@
+parm ../../04_traj/complex.parm7
+trajin ../../04_traj/2us_nowat.nc 75000 100000
+trajin ../../../rep2/04_traj/2us_nowat.nc 75000 100000
+trajin ../../../rep3/04_traj/2us_nowat.nc 75000 100000
+
+center origin :1-361
+rms first
+average crdset MyAvg
+atomicfluct MyFluct calcadp
+run
+crdout MyAvg mypdb.pdb adpdata MyFluct[ADP] bfacdata MyFluct

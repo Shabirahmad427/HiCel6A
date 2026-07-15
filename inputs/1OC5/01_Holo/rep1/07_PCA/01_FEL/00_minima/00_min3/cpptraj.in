@@ -1,0 +1,4 @@
+parm   ../../../../04_traj/complex.parm7
+trajin D405N_MinC_core.nc
+cluster c3 averagelinkage repsilon 0.9 sievetoframe rms :1-360@CA sieve 10 out cnumvtime summary summary.dat info info.dat cpopvtime cpopvtime.agr normframe repout rep repfmt pdb
+run

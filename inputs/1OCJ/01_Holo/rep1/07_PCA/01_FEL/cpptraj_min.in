@@ -1,0 +1,15 @@
+parm ../../04_traj/complex.parm7
+trajin ../../04_traj/2us_nowat.nc
+trajin ../../../rep2/04_traj/2us_nowat.nc
+trajin ../../../rep3/04_traj/2us_nowat.nc
+
+readdata pca.dat
+
+# MinA (right, bottom, deep core)
+outtraj D416A_MinA_core.nc maxmin pca.dat:2 min 0.00 max 27.00 maxmin pca.dat:3 min -25.00 max 5.00
+
+# MinB (upper-right, deep core)
+outtraj D416A_MinB_core.nc maxmin pca.dat:2 min 5.00 max 25.00 maxmin pca.dat:3 min 15.00 max 35.00
+
+# MinC (left, deep core)
+outtraj D416A_MinC_core.nc maxmin pca.dat:2 min -42.00 max -20.00 maxmin pca.dat:3 min -15.00 max 15.00

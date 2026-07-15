@@ -1,0 +1,36 @@
+parm ../../04_traj/complex.parm7
+trajin ../../04_traj/2us_nowat.nc
+autoimage
+rms first
+
+# Residue 47
+dihedral phi_47   :46@C   :47@N   :47@CA  :47@C    out phi_47.dat
+dihedral psi_47   :47@N   :47@CA  :47@C   :48@N    out psi_47.dat
+dihedral chi1_47  :47@N   :47@CA  :47@CB  :47@CG   out chi1_47.dat
+dihedral chi2_47  :47@CA  :47@CB  :47@CG  :47@CD1  out chi2_47.dat
+
+# Residue 184
+dihedral phi_184   :183@C   :184@N   :184@CA  :184@C    out phi_184.dat
+dihedral psi_184   :184@N   :184@CA  :184@C   :185@N    out psi_184.dat
+dihedral chi1_184  :184@N   :184@CA  :184@CB  :184@CG   out chi1_184.dat
+dihedral chi2_184  :184@CA  :184@CB  :184@CG  :184@CD1  out chi2_184.dat
+
+# Residue 187
+dihedral phi_187   :186@C   :187@N   :187@CA  :187@C    out phi_187.dat
+dihedral psi_187   :187@N   :187@CA  :187@C   :188@N    out psi_187.dat
+dihedral chi1_187  :187@N   :187@CA  :187@CB  :187@CG   out chi1_187.dat
+dihedral chi2_187  :187@CA  :187@CB  :187@CG  :187@CD1  out chi2_187.dat
+
+# Residue 278
+dihedral phi_278   :277@C   :278@N   :278@CA  :278@C    out phi_278.dat
+dihedral psi_278   :278@N   :278@CA  :278@C   :279@N    out psi_278.dat
+dihedral chi1_278  :278@N   :278@CA  :278@CB  :278@CG   out chi1_278.dat
+dihedral chi2_278  :278@CA  :278@CB  :278@CG  :278@CD1  out chi2_278.dat
+
+# Residue 281
+dihedral phi_281   :280@C   :281@N   :281@CA  :281@C    out phi_281.dat
+dihedral psi_281   :281@N   :281@CA  :281@C   :282@N    out psi_281.dat
+dihedral chi1_281  :281@N   :281@CA  :281@CB  :281@CG   out chi1_281.dat
+dihedral chi2_281  :281@CA  :281@CB  :281@CG  :281@CD1  out chi2_281.dat
+
+run

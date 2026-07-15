@@ -1,0 +1,44 @@
+parm ../../04_traj/complex.parm7
+trajin ../../04_traj/2us_nowat.nc
+autoimage
+
+## residue original PDB 94(180),140(226),319(405),330(416)
+
+distance dist1  :90@CG   :361@O19 out 5dist_ASP180-CG_BGC-O19.dat
+hist dist1  min 0 max 15 bins 300 norm out 5dist_ASP180-CG_BGC-O19_hist.dat
+
+distance dist2  :136@CG  :361@O19 out 5dist_ASP226-CG_BGC-O19.dat
+hist dist2  min 0 max 15 bins 300 norm out 5dist_ASP226-CG_BGC-O19_hist.dat
+
+distance dist3  :315@CG  :361@O19 out 5dist_ASP405-CG_BGC-O19.dat
+hist dist3  min 0 max 15 bins 300 norm out 5dist_ASP405-CG_BGC-O19_hist.dat
+
+distance dist4  :326@CB  :361@O19 out 5dist_ALA416-CB_BGC-O19.dat
+hist dist4  min 0 max 15 bins 300 norm out 5dist_ALA416-CB_BGC-O19_hist.dat
+
+distance dist5  :136@HD2 :361@O19 out 5dist_ASP226-HD2_BGC-O19.dat
+hist dist5  min 0 max 15 bins 300 norm out 5dist_ASP226-HD2_BGC-O19_hist.dat
+
+distance dist6  :90@CG   :361@O26 out 5dist_ASP180-CG_BGC-O26.dat
+hist dist6  min 0 max 15 bins 300 norm out 5dist_ASP180-CG_BGC-O26_hist.dat
+
+distance dist7  :315@CG  :361@O23 out 5dist_ASP405-CG_BGC-O23.dat
+hist dist7  min 0 max 15 bins 300 norm out 5dist_ASP405-CG_BGC-O23_hist.dat
+
+distance dist8  :315@CG  :361@O27 out 5dist_ASP405-CG_BGC-O27.dat
+hist dist8  min 0 max 15 bins 300 norm out 5dist_ASP405-CG_BGC-O27_hist.dat
+
+distance dist9  :90@OD1 :361@C30 out 5dist_ASP180-OD1_BGC-C30.dat
+hist dist9  min 0 max 15 bins 300 norm out 5dist_ASP180-OD1_BGC-C30_hist.dat
+
+distance dist10 :90@OD2 :361@C30 out 5dist_ASP180-OD2_BGC-C30.dat
+hist dist10 min 0 max 15 bins 300 norm out 5dist_ASP180-OD2_BGC-C30_hist.dat
+
+distance dist11 :315@CG :361@C30 out 5dist_ASP405-CG_BGC-C30.dat
+hist dist11 min 0 max 15 bins 300 norm out 5dist_ASP405-CG_BGC-C30_hist.dat
+
+distance dist12 :326@CB :361@C30 out 5dist_ALA416-CB_BGC-C30.dat
+hist dist12 min 0 max 15 bins 300 norm out 5dist_ALA416-CB_BGC-C30_hist.dat
+
+run
+

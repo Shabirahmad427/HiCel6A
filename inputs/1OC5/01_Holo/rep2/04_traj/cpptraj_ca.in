@@ -1,0 +1,6 @@
+parm complex.parm7
+trajin 2us_nowat.nc 75000 100000
+rms first
+strip !@CA,C,O,N
+trajout 2us_ca.nc netcdf nobox
+run

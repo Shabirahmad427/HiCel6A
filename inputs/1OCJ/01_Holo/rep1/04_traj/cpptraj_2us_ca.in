@@ -1,0 +1,8 @@
+parm complex.parm7
+trajin 2us_nowat.nc 75000 100000
+autoimage
+strip :WAT,SOD,CLA
+strip !@CA,C,O,N
+rms first
+trajout 2us_ca.nc netcdf nobox
+run

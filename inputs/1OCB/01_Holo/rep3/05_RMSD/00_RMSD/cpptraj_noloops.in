@@ -1,0 +1,18 @@
+parm ../../04_traj/complex.parm7
+reference ../../04_traj/equil10_nowat.rst7
+trajin ../../04_traj/2us_nowat.nc
+
+autoimage
+rms first
+
+
+# Fit excluding loops (alignment done on non-loop core)
+rms RMSD_noLoops reference \
+    :1-361&!(:84-101)&!(:217-240)&!(:265-301)&!(:307-345)&@CA,C,O,N \
+    mass out 1RMSD_protein_noLoops.dat
+
+# Histogram of no-loop RMSD
+hist RMSD_noLoops min 0 max 10 bins 200 norm out 1RMSD_protein_noLoops_hist.dat
+
+run
+

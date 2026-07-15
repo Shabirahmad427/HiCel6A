@@ -1,0 +1,14 @@
+*.log
+*.out
+*.mdout
+*.mdinfo
+*.nc
+*.dcd
+*.xtc
+*.trr
+*.rst
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+.DS_Store

@@ -1,0 +1,22 @@
+#input file for running PB and GB
+&general
+  startframe=60001, endframe=70000, interval=5, keep_files=0,
+  receptor_mask=":1-360", ligand_mask=":361",
+  strip_mask=:WAT,:HOH,:Na+,:Cl-,:K+,:Mg2+,:SOD,:CLA,
+/
+&gb
+  igb=5, saltcon=0.150,
+/
+&decomp
+  idecomp=2, dec_verbose=1, csv_format=0,
+  print_res="1-361"
+/
+
+
+
+#mpirun -np 4 MMPBSA.py.MPI -O -i mmpbsa.in -o FINAL_result_rep1_90ns.dat -do FINAL_result-decomp_rep1_90ns.dat -sp complex.box.parm7 -cp complex.parm7 -rp rec.parm7 -lp lig.parm7 -y $(find ../../ -name '../../03_prod/prod*ns.mdcrd' | sort -V) -eo dados_Energ_rep1_90ns.csv
+
+#exe="/path/to/ambertools/bin/MMPBSA.py.MPI"
+#mpirun -np 4 $exe -O -i mmGB-PBsa1.in -o FINAL_Ep_150.dat -do FINAL_decomp_150.dat -sp ../#complex_box.top -cp ../complex.top -rp ../../receptor.top -lp ../../ligand.top -y ../#prod150ns.mdcrd -eo input_150.csv
+
+#srun -n 24 MMPBSA.py.MPI -O -i mmpbsa.in -sp ../00_preparation/complex.box.parm7 -cp ../00_preparation/complex.parm7 -rp ../00_preparation/rec.parm7 -lp ../00_preparation/lig.parm7 -y ../04_traj/1us_wat.mdcrd -o FINAL_RESULTS_MMPBSA.dat -do FINAL_DECOMP_MMPBSA.dat -eo FINAL_DECOMP_MMPBSA.csv

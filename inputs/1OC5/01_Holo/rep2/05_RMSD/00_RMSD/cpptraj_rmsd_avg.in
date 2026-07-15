@@ -1,0 +1,49 @@
+parm ../complex.parm7
+trajin ../2us_nowat.nc
+autoimage
+rms first
+average crdset MyAvg
+run
+rms ref MyAvg
+
+# RMSD for prtoein PDB 87-450
+rmsd r1 reference :1-360&@CA,C,O,N mass out 1RMSD_protein_avg.dat
+run
+hist r1,*,*,.05 norm out 1RMSD_protein_hist_avg.dat
+run
+
+# RMSD for complex PDB 87-451
+rmsd r2 reference :1-361 mass out 1RMSD_complex_avg.dat
+run
+hist r2,*,*,.05 norm out 1RMSD_complex_hist_avg.dat
+run
+
+# RMSD for ligand PDB 451
+rmsd r3 reference :361 mass out 1RMSD_ligand_avg.dat
+run
+hist r3,*,*,.05 norm out 1RMSD_ligand_hist_avg.dat
+run
+
+# RMSD for Loop1 PDB 182-196
+rmsd r4 reference :92-106&@CA,C,O,N mass out 1RMSD_Loop1_182-196_avg.dat
+run
+hist r4,*,*,.05 norm out 1RMSD_Loop1_182-196_hist_avg.dat
+run
+
+# RMSD for Loop2 PDB 316-330
+rmsd r5 reference :226-240&@CA,C,O,N mass out 1RMSD_Loop2_316-330_avg.dat
+run
+hist r5,*,*,.05 norm out 1RMSD_Loop2_316-330_hist_avg.dat
+run
+
+# RMSD for Loop3 PDB 356-370
+rmsd r6 reference :266-280&@CA,C,O,N mass out 1RMSD_Loop3_356-370_avg.dat
+run
+hist r6,*,*,.05 norm out 1RMSD_Loop3_356-370_hist_avg.dat
+run
+
+# RMSD for Loop4 PDB 408-420
+rmsd r7 reference :318-330&@CA,C,O,N mass out 1RMSD_Loop4_408-420_avg.dat
+run
+hist r7,*,*,.05 norm out 1RMSD_Loop4_408-420_hist_avg.dat
+run
