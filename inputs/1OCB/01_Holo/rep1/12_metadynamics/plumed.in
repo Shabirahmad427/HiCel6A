@@ -1,5 +1,0 @@
-#O5,C1,C2,C3,C4,C5
-#025,C25,C26,C27,C28,C29
-puck: PUCKERING ATOMS=5553,5544,5545,5546,5547,5548
-
-PRINT ARG=puck.theta,puck.phi,puck.amplitude FILE=puck.dat STRIDE=10

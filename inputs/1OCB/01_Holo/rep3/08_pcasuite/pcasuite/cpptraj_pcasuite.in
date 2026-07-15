@@ -1,9 +1,0 @@
-parm   ../complex.parm7
-trajin ../2us_nowat.nc
-center :1-362 mass origin
-image origin center
-rms first @CA
-strip !:1-362@CA,C,N,O
-average protein.avg.pdb pdb
-trajout protein.traj.nc crd
-go

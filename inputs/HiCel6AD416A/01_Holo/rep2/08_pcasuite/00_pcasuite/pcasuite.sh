@@ -1,0 +1,1 @@
+pcazip -i protein.traj.nc -p protein.avg.pdb -o protein.traj.pcz -q 100 && pczdump -i protein.traj.pcz --anim 1 --pdb > protein.traj.proj1.pdb && pczdump -i protein.traj.pcz --anim 2 --pdb > protein.traj.proj2.pdb && pczdump -i protein.traj.pcz --anim 3 --pdb > protein.traj.proj3.pdb

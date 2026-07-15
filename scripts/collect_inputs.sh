@@ -11,37 +11,27 @@ mkdir -p "${dest_root}" "$(dirname "${manifest}")"
 copy_matches() {
     while IFS= read -r relpath; do
         [ -n "${relpath}" ] || continue
-        mkdir -p "${dest_root}/$(dirname "${relpath}")"
-        cp -p "${src_root}/${relpath}" "${dest_root}/${relpath}"
+        dest_relpath="${relpath}"
+        case "${dest_relpath}" in
+            1OCB/*) dest_relpath="HiCel6A/${dest_relpath#1OCB/}" ;;
+            1OC5/*) dest_relpath="HiCel6AD405N/${dest_relpath#1OC5/}" ;;
+            1OCJ/*) dest_relpath="HiCel6AD416A/${dest_relpath#1OCJ/}" ;;
+        esac
+        mkdir -p "${dest_root}/$(dirname "${dest_relpath}")"
+        cp -p "${src_root}/${relpath}" "${dest_root}/${dest_relpath}"
     done
 }
-
-find \
-    1OC5/00_Apo \
-    1OCB/00_Apo \
-    1OCJ/00_Apo \
-    -type f \
-    \( \
-        -name '*.pqr' -o \
-        -path '*/amber/README' -o \
-        -name 'step3_input.*' -o \
-        -name 'step4.0_minimization.mdin' -o \
-        -name 'step4.1_equilibration.mdin' -o \
-        -name 'step5_production.mdin' -o \
-        -name 'sysinfo.dat' \
-    \) | sort | copy_matches
 
 find \
     1OC5/01_Holo/00_preparation \
     1OCB/01_Holo/00_preparation \
     1OCJ/01_Holo/00_preparation \
     -type f \
+    ! -path '*/Filesph7/*' \
+    ! -path '*/bglc8_charmmff_fixed/*' \
     \( \
         -name 'README' -o \
-        -name 'README_BGLC8_FIX.md' -o \
         -name 'step3_input.*' -o \
-        -name 'step4.0_minimization.mdin' -o \
-        -name 'step4.1_equilibration.mdin' -o \
         -name 'step5_production.mdin' -o \
         -name 'sysinfo.dat' -o \
         -name 'dihe.restraint' \
@@ -52,17 +42,30 @@ find \
     1OCB/01_Holo/rep1 1OCB/01_Holo/rep2 1OCB/01_Holo/rep3 \
     1OCJ/01_Holo/rep1 1OCJ/01_Holo/rep2 1OCJ/01_Holo/rep3 \
     -type f \
+    ! -path '*/12_metadynamics/*' \
+    ! -path '*/00_preparation/input_run*/*' \
     \( \
         -name 'README' -o \
         -name 'step3_input.*' -o \
-        -name 'step4.0_minimization.mdin' -o \
-        -name 'step4.1_equilibration.mdin' -o \
         -name 'step5_production.mdin' -o \
         -name 'sysinfo.dat' -o \
         -name 'dihe.restraint' -o \
-        -name 'plumed.in' -o \
         -name 'mmpbsa.in' -o \
-        -name 'cpptraj*.in' \
+        -name 'cpptraj*.in' -o \
+        -name 'pcasuite.sh' -o \
+        -name 'pca.sh' -o \
+        -name 'modevector.py' -o \
+        -name '01_pdb-vector_pc1.py' -o \
+        -name '01_pdb-vector_pc2.py' -o \
+        -name 'protein.avg.pdb' -o \
+        -name 'protein.traj.proj1.pdb' -o \
+        -name 'protein.traj.proj2.pdb' -o \
+        -name 'protein.traj.proj3.pdb' -o \
+        -name '01_analysis_correlation.in' -o \
+        -name 'correl_*.dat' -o \
+        -name 'plot_matrix*.py' -o \
+        -name 'cm_water.jl' -o \
+        -name 'results-water.json' \
     \) | sort | copy_matches
 
 (

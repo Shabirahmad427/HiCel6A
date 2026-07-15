@@ -1,0 +1,8 @@
+parm ../../04_traj/complex.parm7
+trajin ../../04_traj/2us_nowat.nc
+trajin ../../../rep2/04_traj/2us_nowat.nc
+trajin ../../../rep3/04_traj/2us_nowat.nc
+#You have to align the trajectory to the first frame or to an average structure
+rms first
+#Example of a cross correlation matrix of all carbon atoms of a protein
+matrix @C,P @C,P correl out correl.dat byres

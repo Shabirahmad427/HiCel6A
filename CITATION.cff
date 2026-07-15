@@ -1,17 +1,20 @@
 cff-version: 1.2.0
-message: "If you use these HiCel6a input files, please cite the associated article and Zenodo record."
-title: "HiCel6a simulation input files"
+message: "If you use these HiCel6A input files, please cite the associated article and Zenodo record."
+title: "HiCel6A simulation input files"
 type: dataset
 authors:
   - family-names: "Shabir"
 date-released: 2026-07-15
 abstract: >
-  Input files and reproducibility scripts for HiCel6a apo and holo molecular
-  simulation systems, prepared for GitHub archiving and later Zenodo release.
+  Curated holo-system input files and reproducibility scripts for the HiCel6A,
+  HiCel6AD405N, and HiCel6AD416A molecular simulation systems, prepared for
+  GitHub archiving and later Zenodo release.
 keywords:
   - molecular dynamics
   - AMBER
   - CHARMM-GUI
-  - HiCel6a
+  - HiCel6A
+  - HiCel6AD405N
+  - HiCel6AD416A
   - reproducibility
 license: "proprietary"

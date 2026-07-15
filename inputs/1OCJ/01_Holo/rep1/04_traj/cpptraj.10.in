@@ -1,6 +1,0 @@
-parm complex.parm7
-trajin 123last.nc
-parmbox nobox
-strip (!:1-361)
-trajout 123last.mdcrd
-run

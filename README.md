@@ -1,6 +1,6 @@
-# HiCel6a Reproducibility Inputs
+# HiCel6A Reproducibility Inputs
 
-This directory is a GitHub-ready archive for the HiCel6a simulation input files.
+This directory is a GitHub-ready archive for the HiCel6A simulation input files.
 It is intended to become the contents of a private GitHub repository first, and
 later a public release connected to Zenodo for journal submission.
 
@@ -9,11 +9,9 @@ later a public release connected to Zenodo for journal submission.
 Included here:
 
 - AMBER topology and coordinate inputs (`step3_input.*`, `parm7`, `rst7`, `pdb`, `psf`)
-- MD control files (`step4.0_minimization.mdin`, `step4.1_equilibration.mdin`, `step5_production.mdin`)
+- Production control files and related run inputs (`step5_production.mdin`, topology, coordinates)
 - System description files (`sysinfo.dat`, `dihe.restraint`, selected `README` files)
-- Metadynamics inputs (`plumed.in`)
-- Analysis input scripts commonly requested for reproducibility (`cpptraj*.in`, `mmpbsa.in`)
-- Original preparation notes for the BGLC8 carbohydrate fix
+- Analysis inputs and key reproducibility files for RMSD, PCA/PCASuite, correlation, MMGBSA, and MDDF
 
 Not included here:
 
@@ -26,9 +24,22 @@ institutional repository if the journal requires raw trajectory access.
 
 ## Structure
 
-- `inputs/`: copied input files preserving their original relative paths
+- `inputs/`: curated input files organized under paper-facing system names
 - `metadata/`: archive manifest and submission checklist
-- `scripts/collect_inputs.sh`: rebuilds `inputs/` from the main HiCel6a workspace
+- `scripts/collect_inputs.sh`: rebuilds `inputs/` from the main HiCel6A workspace
+
+Current top-level system folders in `inputs/`:
+
+- `HiCel6A`
+- `HiCel6AD405N`
+- `HiCel6AD416A`
+
+Current curation notes:
+
+- only holo systems used in the paper are included
+- system names in `inputs/` follow paper-facing labels, not raw source folder names
+- `HiCel6A` includes a curated `01_Holo/00_preparation` directory
+- `Filesph7`, `bglc8_charmmff_fixed`, metadynamics, apo systems, and `input_run*` preparation subfolders are excluded
 
 ## Recommended GitHub -> Zenodo workflow
 
@@ -47,8 +58,8 @@ For MD input deposits, the common minimum is:
 
 - starting structures
 - topology/parameter files
-- all run control files
-- exact analysis scripts used to make the paper figures
+- the run control files actually used for the reported production work
+- exact analysis scripts and key matrix/result files used to make the paper figures
 - a short README explaining directory meaning and software versions
 
 For stronger reproducibility, people also add:
@@ -70,13 +81,16 @@ Check the following carefully:
 
 ## Notes
 
-This archive was assembled from:
+This archive was assembled from these paper-facing system labels:
 
-- `1OC5`
-- `1OCB`
-- `1OCJ`
+- `HiCel6A` from source folder `1OCB`
+- `HiCel6AD405N` from source folder `1OC5`
+- `HiCel6AD416A` from source folder `1OCJ`
+
+Only the holo systems used in the paper are included. Apo-only materials were
+excluded from this archive.
 
 If you want, the next step can be either:
 
-- initialize this folder as a local git repository, or
-- refine the archive scope before pushing to GitHub
+- review the current archive before pushing to GitHub, or
+- prepare a clean Git commit matching the final curated scope
