@@ -1,20 +1,35 @@
 cff-version: 1.2.0
-message: "If you use these HiCel6A input files, please cite the associated article and Zenodo record."
-title: "HiCel6A simulation input files"
+message: "If you use these files, please cite the associated article and the Zenodo record."
+title: "HiCel6A, HiCel6A-D416A and HiCel6A-D405N: simulation inputs and analysis scripts"
 type: dataset
 authors:
-  - family-names: "Shabir"
-date-released: 2026-07-15
+  - family-names: "Ahmad"
+    given-names: "Shabir"
+    affiliation: "Institute of Chemistry, University of Campinas (UNICAMP), Brazil"
+  - family-names: "da Costa"
+    given-names: "Clauber H. S."
+    affiliation: "Institute of Chemistry, University of Campinas (UNICAMP), Brazil"
+  - family-names: "Pereira"
+    given-names: "Ander F."
+    affiliation: "Institute of Chemistry, University of Campinas (UNICAMP), Brazil"
+  - family-names: "dos Santos"
+    given-names: "Alberto M."
+    affiliation: "Institute of Chemistry, University of Campinas (UNICAMP), Brazil"
+  - family-names: "Skaf"
+    given-names: "Munir S."
+    affiliation: "Institute of Chemistry, University of Campinas (UNICAMP), Brazil"
+repository-code: "https://github.com/Shabirahmad427/HiCel6A"
 abstract: >
-  Curated holo-system input files and reproducibility scripts for the HiCel6A,
-  HiCel6AD405N, and HiCel6AD416A molecular simulation systems, prepared for
-  GitHub archiving and later Zenodo release.
+  Simulation input files and analysis scripts for the molecular dynamics study
+  "Loop Dynamics, Substrate Binding, and Active Site Hydration in HiCel6A and its
+  Catalytically Impaired D416A and D405N Mutants": three systems (HiCel6A,
+  HiCel6A-D416A and HiCel6A-D405N, each with a cellooctaose substrate), three
+  independent 2 microsecond replicas per system.
 keywords:
   - molecular dynamics
   - AMBER
   - CHARMM-GUI
+  - cellobiohydrolase
+  - glycoside hydrolase family 6
   - HiCel6A
-  - HiCel6AD405N
-  - HiCel6AD416A
   - reproducibility
-license: "proprietary"
