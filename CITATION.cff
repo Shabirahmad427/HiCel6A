@@ -18,6 +18,7 @@ authors:
   - family-names: "Skaf"
     given-names: "Munir S."
     affiliation: "Institute of Chemistry, University of Campinas (UNICAMP), Brazil"
+license: CC-BY-4.0
 repository-code: "https://github.com/Shabirahmad427/HiCel6A"
 abstract: >
   Simulation input files and analysis scripts for the molecular dynamics study

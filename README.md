@@ -57,6 +57,10 @@ Trajectories are not included because of their size (see Data availability).
 - Archived release: Zenodo, DOI to be added at release.
 - Trajectories: available from the corresponding author on request, or deposited separately and linked here.
 
+## License
+
+All files in this repository are released under the Creative Commons Attribution 4.0 International license (CC BY 4.0), see `LICENSE`.
+
 ## Citation
 
 Please cite the article and the Zenodo record (see `CITATION.cff`).
